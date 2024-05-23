@@ -42,6 +42,11 @@ int main(int argc, char** argv) {
         printf("Ingrese la localidad deseada (1- Sol Norte/Sur, 2- Sombra Este/Oeste, 3- Preferencial): ");
         scanf("%d", &localidad);
         
+        // Validar cantidad de entradas
+        do {
+            printf("Ingrese la cantidad de entradas (maximo 4): ");
+            scanf("%d", &cantidadEntradas);
+        } while (cantidadEntradas < 1 || cantidadEntradas > MAX_ENTRADAS_POR_CLIENTE);
         
         printf("\n¿Desea ingresar otra venta? (1-Si, 0-No): ");
         scanf("%d", &opcion);
