@@ -86,6 +86,22 @@ int main(int argc, char** argv) {
         printf("Cedula: %s\n", cedula);
         printf("Nombre comprador: %s", nombre);
         printf("Localidad: ");
+         switch (localidad) {
+            case 1:
+                printf("Sol Norte/Sur\n");
+                break;
+            case 2:
+                printf("Sombra Este/Oeste\n");
+                break;
+            case 3:
+                printf("Preferencial\n");
+                break;
+        }
+        printf("Cantidad de Entradas: %d\n", cantidadEntradas);
+        printf("Subtotal: %d colones\n", subtotal);
+        printf("Cargos por Servicios: %d colones\n", cargosServicios);
+        printf("Total a pagar: %d colones\n", totalPagar);
+        printf("--------------------------------------------------\n");
         
         printf("\n¿Desea ingresar otra venta? (1-Si, 0-No): ");
         scanf("%d", &opcion);
