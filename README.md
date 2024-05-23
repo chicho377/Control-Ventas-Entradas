@@ -1,5 +1,3 @@
-### README
-
 # Sistema de Control de Ventas de Entradas
 
 Este proyecto implementa un sistema de control de ventas de entradas para el partido de fútbol entre Costa Rica y México, que se llevará a cabo el 5 de noviembre de 2018 en el Estadio Nacional de Costa Rica.
