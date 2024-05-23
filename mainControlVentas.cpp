@@ -107,6 +107,16 @@ int main(int argc, char** argv) {
         scanf("%d", &opcion);
     	
 	}while(opcion != 0);
+	
+	// Mostrar estadísticas
+    printf("\nEstadisticas finales:\n");
+    printf("--------------------------------------------------\n");
+    printf("Cantidad Entradas Localidad Sol Norte/Sur: %d\n", cantidadSol);
+    if (cantidadSol > 0) {
+        printf("Acumulado Dinero Localidad Sol Norte/Sur: %d colones\n", acumuladoSol);
+    } else {
+        printf("Acumulado Dinero Localidad Sol Norte/Sur: N/A\n");
+    }
     
 	return 0;
 }
