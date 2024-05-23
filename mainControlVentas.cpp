@@ -12,7 +12,7 @@ int main(int argc, char** argv) {
     const int CARGO_POR_SERVICIO = 1000;
     const int MAX_ENTRADAS_POR_CLIENTE = 4;
 
-    // Variables para estadísticas
+    // Variables para estadisticas
     int cantidadSol = 0, cantidadSombra = 0, cantidadPreferencial = 0;
     int acumuladoSol = 0, acumuladoSombra = 0, acumuladoPreferencial = 0;
 
@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
     char nombre[50];
     int numeroFactura, localidad, cantidadEntradas;
 
-    // Variables de cálculo
+    // Variables de calculo
     int precioPorEntrada, subtotal, cargosServicios, totalPagar;
     
     // Bucle para ingresar ventas
@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
         scanf("%s", cedula);
 
         printf("Ingrese el nombre del comprador: ");
-        getchar();  // Consumir el salto de línea pendiente en el buffer
+        getchar();
         fgets(nombre, sizeof(nombre), stdin);
 
         printf("Ingrese la localidad deseada (1- Sol Norte/Sur, 2- Sombra Este/Oeste, 3- Preferencial): ");
@@ -79,7 +79,7 @@ int main(int argc, char** argv) {
                 continue;
         }
         
-        // Mostrar información de la venta
+        // Mostrar informacion de la venta
         printf("\nInformacion de la venta:\n");
         printf("--------------------------------------------------\n");
         printf("Numero de Factura: %d\n", numeroFactura);
@@ -108,7 +108,7 @@ int main(int argc, char** argv) {
     	
 	}while(opcion != 0);
 	
-	// Mostrar estadísticas
+	// Mostrar estadisticas
     printf("\nEstadisticas finales:\n");
     printf("--------------------------------------------------\n");
     printf("Cantidad Entradas Localidad Sol Norte/Sur: %d\n", cantidadSol);
@@ -124,6 +124,14 @@ int main(int argc, char** argv) {
     } else {
         printf("Acumulado Dinero Localidad Sombra Este/Oeste: N/A\n");
     }
+    printf("--------------------------------------------------\n");
+    printf("Cantidad Entradas Localidad Preferencial: %d\n", cantidadPreferencial);
+    if (cantidadPreferencial > 0) {
+        printf("Acumulado Dinero Localidad Preferencial: %d colones\n", acumuladoPreferencial);
+    } else {
+        printf("Acumulado Dinero Localidad Preferencial: N/A\n");
+    }
+    printf("--------------------------------------------------\n");
     
 	return 0;
 }
