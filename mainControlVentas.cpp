@@ -48,6 +48,37 @@ int main(int argc, char** argv) {
             scanf("%d", &cantidadEntradas);
         } while (cantidadEntradas < 1 || cantidadEntradas > MAX_ENTRADAS_POR_CLIENTE);
         
+        // Calcular precio y nombre de localidad
+        switch (localidad) {
+            case 1:
+                precioPorEntrada = PRECIO_SOL_NORTE_SUR;
+                subtotal = cantidadEntradas * precioPorEntrada;
+                cargosServicios = cantidadEntradas * CARGO_POR_SERVICIO;
+                totalPagar = subtotal + cargosServicios;
+                cantidadSol += cantidadEntradas;
+                acumuladoSol += subtotal;
+                break;
+            case 2:
+                precioPorEntrada = PRECIO_SOMBRA_ESTE_OESTE;
+                subtotal = cantidadEntradas * precioPorEntrada;
+                cargosServicios = cantidadEntradas * CARGO_POR_SERVICIO;
+                totalPagar = subtotal + cargosServicios;
+                cantidadSombra += cantidadEntradas;
+                acumuladoSombra += subtotal;
+                break;
+            case 3:
+                precioPorEntrada = PRECIO_PREFERENCIAL;
+                subtotal = cantidadEntradas * precioPorEntrada;
+                cargosServicios = cantidadEntradas * CARGO_POR_SERVICIO;
+                totalPagar = subtotal + cargosServicios;
+                cantidadPreferencial += cantidadEntradas;
+                acumuladoPreferencial += subtotal;
+                break;
+            default:
+                printf("Localidad invalida.\n");
+                continue;
+        }
+        
         printf("\n¿Desea ingresar otra venta? (1-Si, 0-No): ");
         scanf("%d", &opcion);
     	
