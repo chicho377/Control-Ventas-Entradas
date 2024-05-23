@@ -1,0 +1,105 @@
+// Pseudocódigo para el sistema de control de ventas de entradas de fútbol
+
+Inicio
+
+    CONSTANTE PRECIO_SOL_NORTE_SUR = 10500
+    CONSTANTE PRECIO_SOMBRA_ESTE_OESTE = 20500
+    CONSTANTE PRECIO_PREFERENCIAL = 25500
+    CONSTANTE CARGO_POR_SERVICIO = 1000
+    CONSTANTE MAX_ENTRADAS_POR_CLIENTE = 4
+
+    Definir cedula, nombre como cadena
+    Definir numeroFactura, localidad, cantidadEntradas como entero
+    Definir precioPorEntrada, subtotal, cargosServicios, totalPagar como entero
+    Definir opcion como entero
+    Definir cantidadSol, cantidadSombra, cantidadPreferencial como entero
+    Definir acumuladoSol, acumuladoSombra, acumuladoPreferencial como entero
+
+    cantidadSol = 0
+    cantidadSombra = 0
+    cantidadPreferencial = 0
+    acumuladoSol = 0
+    acumuladoSombra = 0
+    acumuladoPreferencial = 0
+
+    Hacer
+
+        Escribir("Ingrese el numero de factura: ")
+        Leer(numeroFactura)
+        
+        Escribir("Ingrese la cedula del comprador: ")
+        Leer(cedula)
+        
+        Escribir("Ingrese el nombre del comprador: ")
+        Leer(nombre)
+        
+        Escribir("Ingrese la localidad deseada (1- Sol Norte/Sur, 2- Sombra Este/Oeste, 3- Preferencial): ")
+        Leer(localidad)
+        
+        Hacer
+            Escribir("Ingrese la cantidad de entradas (maximo 4): ")
+            Leer(cantidadEntradas)
+        Mientras cantidadEntradas < 1 O cantidadEntradas > MAX_ENTRADAS_POR_CLIENTE
+        
+        Segun localidad Hacer
+            Caso 1:
+                precioPorEntrada = PRECIO_SOL_NORTE_SUR
+                subtotal = cantidadEntradas * precioPorEntrada
+                cargosServicios = cantidadEntradas * CARGO_POR_SERVICIO
+                totalPagar = subtotal + cargosServicios
+                cantidadSol = cantidadSol + cantidadEntradas
+                acumuladoSol = acumuladoSol + subtotal
+            Caso 2:
+                precioPorEntrada = PRECIO_SOMBRA_ESTE_OESTE
+                subtotal = cantidadEntradas * precioPorEntrada
+                cargosServicios = cantidadEntradas * CARGO_POR_SERVICIO
+                totalPagar = subtotal + cargosServicios
+                cantidadSombra = cantidadSombra + cantidadEntradas
+                acumuladoSombra = acumuladoSombra + subtotal
+            Caso 3:
+                precioPorEntrada = PRECIO_PREFERENCIAL
+                subtotal = cantidadEntradas * precioPorEntrada
+                cargosServicios = cantidadEntradas * CARGO_POR_SERVICIO
+                totalPagar = subtotal + cargosServicios
+                cantidadPreferencial = cantidadPreferencial + cantidadEntradas
+                acumuladoPreferencial = acumuladoPreferencial + subtotal
+            De Otro Modo:
+                Escribir("Localidad invalida.")
+                Continuar 
+        Fin Segun
+        
+        Escribir("\nInformacion de la venta:")
+        Escribir("Numero de Factura: " + numeroFactura)
+        Escribir("Cedula: " + cedula)
+        Escribir("Nombre comprador: " + nombre)
+        Escribir("Localidad: " + (SI localidad = 1 ENTONCES "Sol Norte/Sur" SI NO localidad = 2 ENTONCES "Sombra Este/Oeste" SI NO "Preferencial"))
+        Escribir("Cantidad de Entradas: " + cantidadEntradas)
+        Escribir("Subtotal: " + subtotal + " colones")
+        Escribir("Cargos por Servicios: " + cargosServicios + " colones")
+        Escribir("Total a pagar: " + totalPagar + " colones")
+        
+        Escribir("\n¿Desea ingresar otra venta? (1-Si, 0-No): ")
+        Leer(opcion)
+    Mientras opcion <> 0
+
+    Escribir("\nEstadísticas finales:")
+    Escribir("Cantidad Entradas Localidad Sol Norte/Sur: " + cantidadSol)
+    Si cantidadSol > 0 Entonces
+        Escribir("Acumulado Dinero Localidad Sol Norte/Sur: " + acumuladoSol + " colones")
+    De Otro Modo
+        Escribir("Acumulado Dinero Localidad Sol Norte/Sur: N/A")
+    
+    Escribir("Cantidad Entradas Localidad Sombra Este/Oeste: " + cantidadSombra)
+    Si cantidadSombra > 0 Entonces
+        Escribir("Acumulado Dinero Localidad Sombra Este/Oeste: " + acumuladoSombra + " colones")
+    De Otro Modo
+        Escribir("Acumulado Dinero Localidad Sombra Este/Oeste: N/A")
+    
+    Escribir("Cantidad Entradas Localidad Preferencial: " + cantidadPreferencial)
+    Si cantidadPreferencial > 0 Entonces
+        Escribir("Acumulado Dinero Localidad Preferencial: " + acumuladoPreferencial + " colones")
+    De Otro Modo
+        Escribir("Acumulado Dinero Localidad Preferencial: N/A")
+    
+    EsperarTecla()
+Fin
