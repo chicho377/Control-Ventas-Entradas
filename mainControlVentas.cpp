@@ -24,5 +24,29 @@ int main(int argc, char** argv) {
     // Variables de cálculo
     int precioPorEntrada, subtotal, cargosServicios, totalPagar;
     
+    // Bucle para ingresar ventas
+    int opcion;
+    do{
+    	
+    	// Ingresar datos de la venta
+        printf("Ingrese el numero de factura: ");
+        scanf("%d", &numeroFactura);
+
+        printf("Ingrese la cedula del comprador: ");
+        scanf("%s", cedula);
+
+        printf("Ingrese el nombre del comprador: ");
+        getchar();  // Consumir el salto de línea pendiente en el buffer
+        fgets(nombre, sizeof(nombre), stdin);
+
+        printf("Ingrese la localidad deseada (1- Sol Norte/Sur, 2- Sombra Este/Oeste, 3- Preferencial): ");
+        scanf("%d", &localidad);
+        
+        
+        printf("\n¿Desea ingresar otra venta? (1-Si, 0-No): ");
+        scanf("%d", &opcion);
+    	
+	}while(opcion != 0);
+    
 	return 0;
 }
