@@ -79,6 +79,14 @@ int main(int argc, char** argv) {
                 continue;
         }
         
+        // Mostrar información de la venta
+        printf("\nInformacion de la venta:\n");
+        printf("--------------------------------------------------\n");
+        printf("Numero de Factura: %d\n", numeroFactura);
+        printf("Cedula: %s\n", cedula);
+        printf("Nombre comprador: %s", nombre);
+        printf("Localidad: ");
+        
         printf("\n¿Desea ingresar otra venta? (1-Si, 0-No): ");
         scanf("%d", &opcion);
     	
