@@ -117,6 +117,13 @@ int main(int argc, char** argv) {
     } else {
         printf("Acumulado Dinero Localidad Sol Norte/Sur: N/A\n");
     }
+    printf("--------------------------------------------------\n");
+    printf("Cantidad Entradas Localidad Sombra Este/Oeste: %d\n", cantidadSombra);
+    if (cantidadSombra > 0) {
+        printf("Acumulado Dinero Localidad Sombra Este/Oeste: %d colones\n", acumuladoSombra);
+    } else {
+        printf("Acumulado Dinero Localidad Sombra Este/Oeste: N/A\n");
+    }
     
 	return 0;
 }
